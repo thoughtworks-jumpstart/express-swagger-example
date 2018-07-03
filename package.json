@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start:dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +15,8 @@
     "express": "^4.16.3",
     "prettier": "^1.13.7",
     "swagger-ui-express": "^3.0.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
