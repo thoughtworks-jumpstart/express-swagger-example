@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "swagger-ui-express": "^3.0.10"
   }
 }

@@ -1,0 +1,161 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Your API name"
+  },
+  "servers": [
+    {
+      "url": "https://api-url.com"
+    }
+  ],
+  "paths": {
+    "/resource1": {
+      "get": {
+        "summary": "List all resource1",
+        "tags": [
+          "resource1"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of blog posts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "example": {
+                      "id": 5,
+                      "name": "hello",
+                      "flavour": "margarita"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a resource",
+        "tags": [
+          "resource1"
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/resource1/{id}": {
+      "get": {
+        "summary": "Info for a specific resource",
+        "tags": [
+          "resource1"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The id of the resource to retrieve",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "id": 5,
+                    "name": "something"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a specific item",
+        "tags": [
+          "resource1"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The id of the resource to update",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Updated fields for resource",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "id": 2,
+                  "name": "something"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "id": 5,
+                    "name": "updated name"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource2": {
+      "get": {
+        "summary": "List all resource1",
+        "tags": [
+          "resource2"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of resource objects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "example": {
+                      "id": 6,
+                      "special": "a different kind of resource"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
